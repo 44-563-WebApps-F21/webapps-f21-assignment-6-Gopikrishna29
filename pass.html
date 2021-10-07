@@ -23,6 +23,8 @@
 
 <p id="result">This text will be replaced </p>
 
+<img id="animal-image" width="200" height="200" src="Aardwolf.jpg" alt="Picture of wolf" onclick="newImage()">
+
 <script> 
 var correct=0;
 var wrong=0;
@@ -40,6 +42,24 @@ function processPhrase() {
         alert("Access denied")
         wrong+= 1
         out.innerHTML = "correct: "+correct+ " "+"wrong: "+wrong
+    
+    }
+}
+var usingImage = 1;
+function newImage() {
+    switch (usingImage) {
+        case 1:
+            document.getElementById("animal-image").src = "Aardwolf.jpg"
+            usingImage = 2
+            break
+        case 2:
+            document.getElementById("animal-image").src = "Mandrill.jpg"
+            usingImage = 3
+            break
+        case 3:
+            document.getElementById("animal-image").src = "Nyala.jpg"
+            usingImage = 1
+            break
     }
 }
 </script>
